@@ -230,6 +230,7 @@
 // function Person(name) {
 //     this.name = name
 // }
+// ^^^ Note that function constructors should be used in older environments / environments not ES6-supported. Use Class when possible as normal practice. ^^^
 
 // const bob = new Person('Corey')
 // console.log(bob.name) // Within a constructor function, 'this' refers to the constructor function 'Person'.
@@ -306,13 +307,87 @@
 // console.log(Calculator.subtract(5, 3));
 // -----------------------------------------------------------------
 
+// *Set TimeOut*
+
+// setTimeout(() => {
+//     console.log("This basic message will appear after 2 seconds.")
+// }, 2000)
+
+// function greet() {
+//     console.log('Greetings! I will appear after 3 seconds.')
+// }
+// setTimeout(greet, 3000)
+
+// function welcome(name) {
+//     console.log(`Welcome to our website, ${name}!`)
+// }
+// setTimeout(welcome, 1000, 'Corey')
+
+// async function fetchData() {
+//     console.log("And...")
+//     setTimeout(() => {
+//         console.log('Success!')
+//     }, 2000)
+// }
+// fetchData()
+// -----------------------------------------------------------------
+
+// *Closures*
+
+// function createGreeting(greeting) {
+//   return function (name) {
+//     console.log(`${greeting}, ${name}.`);
+//   };
+// }
+
+// const greetHello = createGreeting("Hello");
+// greetHello("Corey");
+
+// const welcomeGreeting = createGreeting("Welcome");
+// welcomeGreeting("Sam");
+
+// function createCounter() {
+//   let count = 0;
+
+//   return function () {
+//     count++;
+//     console.log(count);
+//   };
+// }
+
+// const myCounter = createCounter();
+// myCounter();
+// myCounter();
+
+// function createMultiplier(factor) {
+//   return function (number) {
+//     return number * factor;
+//   };
+// }
+
+// const double = createMultiplier(2);
+// console.log(double(5));
+
+// const triple = createMultiplier(3);
+// console.log(triple(5));
+
+// function delayedMessage(message, delay) {
+//   setTimeout(function () {
+//     console.log(message);
+//   }, delay);
+// }
+// delayedMessage("This message will appear after 2 seconds.", 2000);
+
+// for (let i = 1; i <= 9; i++) {
+//     setTimeout(function () {
+//         console.log(i)
+//     }, i * 1000)
+// }
+// -----------------------------------------------------------------
+
 
 // Async Await Functions.
-
-// Set TimeOut.
 
 // Event Delegation.
 
 // Recursion.
-
-// Closures.
