@@ -307,7 +307,7 @@
 // console.log(Calculator.subtract(5, 3));
 // -----------------------------------------------------------------
 
-// *Set TimeOut*
+// *setTimeout*
 
 // setTimeout(() => {
 //     console.log("This basic message will appear after 2 seconds.")
@@ -385,9 +385,170 @@
 // }
 // -----------------------------------------------------------------
 
+// *Recursion*
 
+// function factorial(n) {
+//   if (n === 0 || n === 1) {
+//     return 1;
+//   }
+//   return n * factorial(n - 1);
+// }
+// console.log(factorial(5)); // Output: 120 (5 * 4 * 3 * 2 * 1)
+
+// function fibonacci(n) {
+//   if (n <= 1) {
+//     return n;
+//   }
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+// console.log(fibonacci(6)); // Output: 8 (sequence: 0, 1, 1, 2, 3, 5, 8)
+
+// function sumArray(arr) {
+//   if (arr.length === 0) {
+//     return 0;
+//   }
+//   return arr[0] + sumArray(arr.slice(1));
+// }
+// console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+
+// function countdown(n) {
+//   if (n <= 0) {
+//     console.log("Done!");
+//     return;
+//   }
+//   console.log(n);
+//   countdown(n - 1);
+// }
+// countdown(5); // Output: 5, 4, 3, 2, 1, "Done!"
+
+// function greatestCommonDenominator(a, b) {
+//   if (b === 0) {
+//     return a;
+//   }
+//   return greatestCommonDenominator(b, a % b);
+// }
+// console.log(greatestCommonDenominator(48, 18)); // Output: 6
+// -----------------------------------------------------------------
+
+// *Promises*
+
+// const simplePromise = new Promise((resolve, reject) => {
+//   let condition = true;
+//   if (condition) {
+//     resolve("Promise resolved successfully!");
+//   } else {
+//     reject("Promise not fulfilled.");
+//   }
+// });
+
+// simplePromise.then
+//     ((message) => {
+//         console.log(message);
+//     }).catch((error) => {
+//         console.error(error);
+//     });
+
+// function delay(ms) {
+//     return new Promise((resolve, reject) => {
+//         if (ms < 1000 || ms === undefined || ms === NaN) {
+//             reject("Value cannot less than 1000, blank, or a non-number.")
+//             return; // MAKE NOTE OF THE IMPORTANCE OF THAT SEMICOLON.
+//         }
+//         setTimeout(() => {
+//             resolve(`Completed after ${ms} milliseconds.`)
+//         }, ms)
+//     });
+// }
+
+// delay(1000).then((message) => {
+//     console.log(message)
+// }).catch((error) => {
+//     console.error(error);
+// })
+
+// function doubleAfter2Seconds(value) {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(value * 2);
+//     }, 2000);
+//   });
+// }
+
+// doubleAfter2Seconds(10)
+//   .then((result) => {
+//     console.log(result);
+//     return doubleAfter2Seconds(result);
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   });
+
+// function aFunctionPromise(num) {
+//    return new Promise((resolve, reject) => { // Never forget the 'return'!
+//         const number = 5;
+
+//         if (num === 5) {
+//             resolve('The number is correct.')
+//         } else {
+//             reject('The number is incorrect.')
+//         }
+//     })
+// }
+
+// aFunctionPromise(4)
+//     .then((result) => {
+//     console.log(result)
+//     })
+//     .catch((error) => {
+//     console.error(error);
+//     })
+
+// const aVariablePromise = new Promise((resolve, reject) => {
+//   const number = 7;
+
+//   if (number === 7) {
+//     resolve(true);
+//   } else {
+//     reject(false);
+//   }
+// });
+// aVariablePromise
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+// const fakeApi = new Promise((resolve, reject) => {
+//     const url = "https://jsonplaceholder.typicode.com/todos/1";
+
+//     fetch(url)
+//         .then(response)
+//     if (response = !ok) {
+
+//     }
+// })
+// -----------------------------------------------------------------
+
+
+// Destructuring
 // Async Await Functions.
 
 // Event Delegation.
 
-// Recursion.
+// IIFE (Immediately-Invoked Function Expression)
+
+// **************Test Questions****************
+
+// For Loop
+// Recursion (Countdown)
+// Closure
+// Class and Constructor
+// .this
+// Switch and Break
+// Fetch
+// Destructuring
+// Multiply all elements in array by 5.
+// Use reduce
+// Promises (variable and function)
