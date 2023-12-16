@@ -531,9 +531,118 @@
 // })
 // -----------------------------------------------------------------
 
+// *Destructuring*
 
-// Destructuring
-// Async Await Functions.
+// const numbers = [1, 2, 3]
+// const [a, b, c] = numbers
+// console.log(a, b, c) // Output: 1 2 3
+
+// const array = ['first', 'second', 'third']
+// const [, , thirdItem] = array
+// console.log(thirdItem) // Output: third -- using commas to skip elements.
+
+// const moreNumbers = [1]
+// const [a, b = 2] = moreNumbers
+// console.log(a, b) // Output: 1 2 -- Providing default values if array has fewer elements than expected.
+
+// const person = { name: 'Alice', age: 25 }
+// const { name, age } = person
+// console.log(name, age) // Output: Alice 25
+
+// const person = { name: 'Alice', age: 25 };
+// const { name: personName, age: personAge } = person;
+// console.log(personName, personAge) // Output: Alice 25 -- Assigning properties to new variable names.
+
+// const person = { name: 'Alice' };
+// const { name, age = 30 } = person;
+// console.log(name, age) // Output: Alice 30 -- Providing default values for properties that might not exist.
+
+// function introduce({ name, age }) {
+//     console.log(`My name is ${name} and I am ${age} years old.`)
+// }
+// introduce({ name: 'Corey', age: 31 }) // Output: My name is Corey and I am 31 years old.
+
+// function sum([a, b, c]) {
+//     return a + b + c;
+// }
+// console.log(sum([1, 2, 3])); // Output: 6
+
+// const user = {
+//     name: 'Corey',
+//     age: 31,
+//     social: {
+//         twitter: '@corey',
+//         facebook: 'corey.fb'
+//     }
+// };
+
+// const { social: { twitter, facebook } } = user;
+// console.log(twitter, facebook); // Output: @corey corey.fb
+// -----------------------------------------------------------------
+
+
+// *Async Await Functions*
+
+// async function fetchData() {
+//     const url = "https://jsonplaceholder.typicode.com/todos/1";
+//     const response = await fetch(url)
+//     const data = await response.json();
+
+//     console.log(data)
+// }
+// fetchData() // Basic async function.
+
+// async function fetchData() {
+
+//     try {
+//         const url = "https://jsonplaceholder.typicode.com/todos/";
+//         const response = await fetch(url)
+//         const data = await response.json()
+//         console.log(data)
+//     } catch (error) {
+//         console.error('Error fetching data:', error);
+//     }
+// }
+// fetchData() // Async function with error handling.
+
+// const fetchData = async () => {
+//     const url = "https://jsonplaceholder.typicode.com/todos/1";
+//     const response = await fetch(url);
+//     const data = await response.json()
+//     console.log(data)
+// }
+// fetchData() // Async function expression / arrow function.
+
+// function delay(ms) {
+//     return new Promise(resolve => setTimeout(resolve, ms));
+// }
+
+// async function runDelayed() {
+//     console.log("Starting delay")
+//     await delay(2000);
+//     console.log("Delay completed")
+// }
+// runDelayed() // Using async with setTimeout.
+
+// async function getUserData(userId) {
+//     const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+//     const response = await fetch(url);
+//     const data = await response.json()
+//     return userId;
+// }
+
+// async function showUserData() {
+//     const user1 = await getUserData(1)
+//     console.log(user1)
+//     const user2 = await getUserData(2)
+//     console.log(user2)
+// }
+// showUserData() // Using async with multiple promises.
+
+
+
+
+
 
 // Event Delegation.
 
