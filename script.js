@@ -428,6 +428,18 @@
 //   return greatestCommonDenominator(b, a % b);
 // }
 // console.log(greatestCommonDenominator(48, 18)); // Output: 6
+
+// function recursiveFactorial(n) {
+//     if (n === 0) {
+//         return 1;
+//     } else {
+//         return n * recursiveFactorial(n - 1)
+//     }
+// }
+
+// console.log(recursiveFactorial(5)) // Output: 120 (5 * 4 * 3 * 2 * 1)
+// console.log(recursiveFactorial(0)) // Output: 1
+// console.log(recursiveFactorial(3)) // Output: 6 (3 * 2 * 1)
 // -----------------------------------------------------------------
 
 // *Promises*
@@ -580,7 +592,6 @@
 // console.log(twitter, facebook); // Output: @corey corey.fb
 // -----------------------------------------------------------------
 
-
 // *Async Await Functions*
 
 // async function fetchData() {
@@ -638,26 +649,147 @@
 //     console.log(user2)
 // }
 // showUserData() // Using async with multiple promises.
+// -----------------------------------------------------------------
 
+// *Event Delegation*
 
+// const eventList = document.querySelector('#eventList')
 
+// eventList.addEventListener('click', (e) => {
+//     if (e.target.tagName === 'LI') {
+//       console.log("List item clicked:", e.target.textContent);
+//       // This will work no matter how many more list items are added, because the event is added to the UL -- not the elements. Only one event listener is needed instead of many.
+//     }
+// })
 
+// const button = document.querySelector('#addButton')
+// const container = document.querySelector('#container')
 
+// button.addEventListener('click', () => {
+//     const newItem = document.createElement('div')
+//     newItem.textContent = 'New Item'
+//     container.appendChild(newItem)
+// })
+// Event listener added to create new elements.
 
-// Event Delegation.
+// container.addEventListener('click', (e) => {
+//     if (e.target.textContent === 'New Item') {
+//         console.log('New Item clicked!')
+//     }
+// })
+// Event listener added pertains to any and all new created elements.
 
-// IIFE (Immediately-Invoked Function Expression)
+// const parent = document.querySelector('#parent')
+// const child = document.querySelectorAll('.child')
+
+// parent.addEventListener('click', (e) => {
+//     if (e.target && e.target.matches('.child')) {
+//         console.log('Button clicked:', e.target.textContent)
+//     }
+// })
+// Note that CLASS is used instead of ID when naming multiple elements the same name.
+// -----------------------------------------------------------------
+
+// *IIFE (Immediately-Invoked Function Expression)*
+
+// (function () {
+//     console.log("This function runs immediately.")
+// })()
+
+// (function (name) {
+//     console.log(`Hello, ${name}!`)
+// })('Corey')
+
+// let result = (function () {
+//     let secret = "Secret Code";
+//     return `The secret is: ${secret}`
+// })()
+// console.log(result)
+
+// let person = (function () {
+//     let name = 'Corey'
+//     let age = 32;
+
+//     return {
+//         getName: function () { return name; },
+//         getAge: function () { return age; }
+//     }
+// })()
+// console.log(person.getName())
+// console.log(person.getAge())
+
+// (async function () {
+//     let data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+//     let json = await data.json()
+//     console.log(json)
+// })()
+// -----------------------------------------------------------------
 
 // **************Test Questions****************
 
 // For Loop
+
+// let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(i)
+// }
+// -----------------------------------------------------------------
+
 // Recursion (Countdown)
+
 // Closure
+
 // Class and Constructor
-// .this
+// this
+
+// const object = {
+//     name: 'Corey',
+//     age: 31,
+//     car: 'Hyundai',
+//     hair: 'Brown',
+//     greeting: function() {
+//         console.log(`Hello, my name is ${this.name}.`)
+//     }
+// }
+// object.greeting()
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.greet = function() {
+//         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)
+//         }
+// }
+// // Remember that lines are ended with a ';' in constructors -- not ':' and ','. Attach 'this' to all properties.
+// const corey = new Person('Corey', 32)
+// corey.greet()
+// -----------------------------------------------------------------
+
 // Switch and Break
 // Fetch
 // Destructuring
 // Multiply all elements in array by 5.
 // Use reduce
 // Promises (variable and function)
+// -----------------------------------------------------------------
+
+// *Scenario Problems*
+
+// Simulate a CPAP machine that maintains a constant output regardless of leakage.
+
+// function rectify(output) {
+//   const continuousOutput = 50;
+//   let actualOutput = output;
+//   const correction = continuousOutput - actualOutput;
+
+//   if (actualOutput === 50) {
+//     return "No leakage.";
+//   } else {
+//     return `Adjusted by ${correction}psi.`;
+//   }
+// }
+// console.log(rectify(50));
+// console.log(rectify(-10));
+// console.log(rectify(25));
+// -----------------------------------------------------------------
+
